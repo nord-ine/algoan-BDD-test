@@ -12,7 +12,7 @@ Given('I am on the page {string}', async function (string) {
 });
 
 Then('the {string} of the page should be {string}', async function (string, string2) {
-    h1Text =  await this.page.$eval('H1', e => e.textContent);
+    h1Text =  await this.page.$eval(string, e => e.textContent);
     await this.browser.close();
     return assert.equal(h1Text, string2);;
 });
